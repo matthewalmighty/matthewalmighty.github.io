@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Hayamiya Mio | character description by ramzy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --ink: #111;
+      --bg: #FFDE00;
+      --pink: #FF90E8;
+      --blue: #4CC9F0;
+      --green: #06D6A0;
+      --white: #FFFDF5;
+      --purple: #B9A0FF;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { height: 100%; overflow: hidden; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==== FRAME HP 9:16 ==== */
+    .phone {
+      width: min(100%, 400px);
+      aspect-ratio: 9 / 16;
+      max-height: 95vh;
+      background-color: var(--bg);
+      background-image: radial-gradient(var(--ink) 1px, transparent 1px);
+      background-size: 16px 16px;
+      border: 6px solid var(--ink);
+      box-shadow: 12px 12px 0 var(--ink);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ==== AREA SCROLL KONTEN ==== */
+    .content-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 18px 40px;
+      position: relative;
+      z-index: 1;
+      -webkit-overflow-scrolling: touch;
+    }
+    .content-scroll::-webkit-scrollbar { display: none; }
+
+    /* ==== PARTICLES ==== */
+    .particles {
+      position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      color: var(--ink);
+      font-family: 'Archivo Black', sans-serif;
+      animation: floatUp linear infinite;
+      will-change: transform;
+      bottom: -50px;
+    }
+    .particle.dot { background: var(--ink); border-radius: 50%; }
+    .particle.square { background: var(--ink); }
+    .particle.plus { font-weight: 700; line-height: 1; }
+    .particle.star { font-weight: 700; line-height: 1; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-110vh) rotate(360deg); }
+    }
+
+    /* ==== STYLING KOTAK (DIV) BAWAAN LO ==== */
+    .content-scroll > div {
+      background: var(--white);
+      border: 4px solid var(--ink);
+      box-shadow: 6px 6px 0 var(--ink);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    /* Warna Kotak Biar Variatif */
+    .content-scroll > div:nth-of-type(1) { background: var(--purple); }
+    .content-scroll > div:nth-of-type(2) { background: var(--white); }
+    .content-scroll > div:nth-of-type(3) { background: var(--blue); }
+
+    /* ==== TYPOGRAPHY ==== */
+    h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.6rem;
+      text-align: center;
+      background: var(--pink);
+      border: 4px solid var(--ink);
+      padding: 12px;
+      box-shadow: 4px 4px 0 var(--ink);
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    /* Gambar Broken tetep rapi */
+    img {
+      display: block;
+      width: 100%;
+      min-height: 200px;
+      object-fit: cover;
+      background: #ddd;
+      border: 4px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+      margin-bottom: 16px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    p, li {
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    li { margin-bottom: 14px; }
+    li::marker { color: var(--ink); font-size: 1.1rem; }
+
+    /* ==== ELEMEN LUAR (TEKS) ==== */
+    .content-scroll > p, .content-scroll > u, .content-scroll > i, .content-scroll > b {
+      background: var(--white);
+      border: 3px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+      padding: 14px;
+      margin-bottom: 16px;
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    /* ==== STYLING LINK KOMIK (BENTUK TOMBOL) ==== */
+    .content-scroll > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--green);
+      border: 4px solid var(--ink);
+      padding: 16px;
+      box-shadow: 5px 5px 0 var(--ink);
+      cursor: pointer;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+      margin-bottom: 16px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    
+    .content-scroll > a:active {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 var(--ink);
+    }
+
+    /* ==== MOBILE FULLSCREEN ==== */
+    @media (max-width: 500px) {
+      body { padding: 0; background: var(--bg); }
+      .phone {
+        width: 100vw; height: 100dvh; max-height: 100dvh;
+        aspect-ratio: auto; border: none; box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="phone">
+  <!-- Partikel Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Area Scroll Konten -->
+  <div class="content-scroll">
+    
+    <!-- ===== HTML ASLI LO ===== -->
+    <div>
+      <h1> INI MY BINI GUWAAAA!!! </h1>
+      <img src="5e6c213770d344f2c025e3dc68419322.jpg" alt="Gambar Hayamiya Mio (File lokal tidak ditemukan)">
+      <p><i>Hayamiya Mio adalah karakter fiksi dari manga/komik Jepang, atau bisa dibilang my bini guwa (lol).</i></p>
+    </div>
+    <div>
+      <p><br><strong>Jadi gini ceritanya, dia itu tokoh utama cewek dari manga Haimiya-senpai wa Kowakute Kawaii. Arti judulnya kurang lebih "Senior Haimiya itu serem tapi gemesin ><".</strong></p>
+    </div>
+    <div class="bagian-perkenalan">
+      <b>Nih guwah perkenalkan calon mbg guwa:</b>
+      <ul>
+      <li> <strong>Umurnya 16 tahun, masih SMA. Rambutnya perak/putih khas animek, matanya tajam banget (bagian fav guwa jier), dan ada tahi lalat di bawah mata yang membuat dia makin adem ayem dilihatnya.</strong></li>
+      <li> <strong>Ngomongnya pake logat Kansai (dialek Osaka) walaupun belum pernah denger suaranya😹. Yang jelas logat Kansai itu kayak logat Jawa Timur-nya Jepang — medok, akrab, dan kocak. Jadi walaupun mukanya galak, pas ngomong malah bikin meleleh ahay.</strong></li>
+      <li> <strong>Otaknya encer banget, nilai semua pelajaran di atas 90. Tapi jangan bayangin dia kutu buku😡, soalnya dia tuh penggemar berat makanan manis. Kalo ada kue atau permen, dijamin matanya langsung berbinar-binar kayak kucing liat ikan.</strong></li>
+      <li> <strong>Sifatnya agak kontras: dari luar keliatan angker dan cuek, dan terkadang membuat banyak orang menjauh. Tapi sebenernya baik hati, lembut, dan canggung secara sosial. Dia tipe yang susah punya teman, dan cuma deket sama satu orang cowok bernama Kurose (guwa tuh😏).</strong></li>
+      </ul>
+    </div>
+    
+    <p>Jadi intinya, Hayamiya Mio tuh gadis galak yang bikin gemes, pintar, lucu logatnya, dan jatuhnya gap moe banget — yaitu istilah buat karakter yang keliatan <b>serem</b> tapi ternyata <b>imut</b>. 
+    <br><u><i>(Cocok banget kan dia sama guwa?😹)</i></u></p>
+    
+    <p style="font-family:'Archivo Black', sans-serif; text-align:center;">—ramzy</p>
+
+    <!-- Tombol Link Komik (TETAP ADA) -->
+    <a href="https://komiku.org/manga/haimiya-senpai-wa-kowakute-kawaii/"> Klik untuk membaca kisah guwa dan My bini guwa</a>
+
+    <!-- Tombol "Klik aku" & script.js UDAH GW HAPUS -->
+    
+  </div>
+</div>
+
+<!-- Script Partikel -->
+<script>
+  const particlesEl = document.getElementById('particles');
+  const shapes = ['dot', 'square', 'plus', 'star'];
+  
+  for (let i = 0; i < 45; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+    
+    if (shape === 'dot') {
+      p.classList.add('dot');
+      const s = Math.random() * 4 + 3;
+      p.style.width = s + 'px'; p.style.height = s + 'px';
+    } else if (shape === 'square') {
+      p.classList.add('square');
+      const s = Math.random() * 6 + 4;
+      p.style.width = s + 'px'; p.style.height = s + 'px';
+    } else if (shape === 'plus') {
+      p.classList.add('plus');
+      p.textContent = '+';
+      p.style.fontSize = (Math.random() * 6 + 10) + 'px';
+    } else {
+      p.classList.add('star');
+      p.textContent = '★';
+      p.style.fontSize = (Math.random() * 4 + 10) + 'px';
+    }
+
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (Math.random() * 15 + 15) + 's';
+    p.style.animationDelay = (Math.random() * -30) + 's';
+    p.style.opacity = Math.random() * 0.1 + 0.05;
+    
+    particlesEl.appendChild(p);
+  }
+</script>
+
+</body>
+</html>
